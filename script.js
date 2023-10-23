@@ -1,4 +1,4 @@
-const API_URL = 'https://greyswisdomapi.onrender.com/greys-wisdom-api';
+const API_URL = 'https://greyswisdomapi.onrender.com/get';
 
 // Function to fetch a random quote from the API
 async function fetchRandomQuote() {
