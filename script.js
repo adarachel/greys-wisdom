@@ -17,9 +17,26 @@ async function fetchRandomQuote() {
 
 // Function to display the fetched quote
 async function displayQuote() {
+    // Show loading screen
+    document.querySelector('.loading-screen').style.display = 'flex';
+
+    // Hide the container
+    document.querySelector('.container').classList.add('hidden');
+
     const quoteElement = document.getElementById('quote');
     const quote = await fetchRandomQuote();
-    quoteElement.textContent = quote;
+
+    // Introduce a delay to make the loading screen more noticeable
+    setTimeout(() => {
+        // Hide loading screen
+        document.querySelector('.loading-screen').style.display = 'none';
+
+        // Show the container
+        document.querySelector('.container').classList.remove('hidden');
+
+        // Update the quote
+        quoteElement.textContent = quote;
+    }, 1000); // Adjust the delay time (in milliseconds) as needed
 }
 
 // Event listener for the "Get Quote" button
